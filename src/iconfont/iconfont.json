@@ -1,0 +1,37 @@
+{
+  "id": "3516269",
+  "name": "个人任务",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "807276",
+      "name": "缩小",
+      "font_class": "suoxiao",
+      "unicode": "e661",
+      "unicode_decimal": 58977
+    },
+    {
+      "icon_id": "5809171",
+      "name": "放大",
+      "font_class": "fangda",
+      "unicode": "e685",
+      "unicode_decimal": 59013
+    },
+    {
+      "icon_id": "12097431",
+      "name": "放大",
+      "font_class": "fangda1",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
+      "icon_id": "12097695",
+      "name": "缩小",
+      "font_class": "suoxiao1",
+      "unicode": "e67e",
+      "unicode_decimal": 59006
+    }
+  ]
+}
