@@ -1,4 +1,5 @@
 import {createStore} from 'vuex'
+import app from './modules/app'
 //创建store 实例
 const store = createStore({
 //数据state
@@ -6,9 +7,9 @@ const store = createStore({
     return {
         username:"测试"
     }
-    
 
-  }
+
+  },
 
 //mutations 方法
 
@@ -16,6 +17,8 @@ const store = createStore({
 
 
 //模块
-
+modules:{
+    app
+}
 })
 export  default store

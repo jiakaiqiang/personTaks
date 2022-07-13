@@ -36,6 +36,7 @@
                 height: "500px",
             });
             const store = useStore();
+            console.log(store,'wewe--')
 
 
             let chartOptions = reactive({
@@ -109,15 +110,14 @@
             let isFulleScreen = ref(false)
 
             function toggleFullScreen() {
-                console.log('wefwef', screenfull)
                 if (screenfull.default.isEnabled) {
                     if (screenfull.default.isFullscreen) {
                         nextTick(() => {
-                            isFulleScreen.value = true
+                            isFulleScreen.value = false
                         })
                     } else {
                         nextTick(() => {
-                            isFulleScreen.value = false
+                            isFulleScreen.value = true
                         })
                     }
                     console.log(isFulleScreen.value, screenfull.default.isFullscreen, 'wewjka')
@@ -158,10 +158,13 @@
     .task-board {
         margin: 8px;
         border: 1px solid #aaa;
-        height: calc(100vh - 20px);
+        height: calc(100vh - 120px);
         color: white;
         border-radius: 10px;
         background-image: url('@/images/homepageBg.png');
+    }
+    #dv-full-screen-container{
+        top:80px
     }
 
 </style>
