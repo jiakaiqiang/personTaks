@@ -1,19 +1,41 @@
-import {createRouter,createWebHashHistory} from 'vue-router'
-console.log(createRouter,'-wewe')
+import {createRouter, createWebHashHistory} from 'vue-router'
 //路由配置
-const routes=[
+const routes = [
     {
         path:"/",
-        title:'首页',
-        component:()=>import('@/views/homepage/index.vue')
-    },{
-        path:"/taskAdd",
-        title:"任务添加",
-        component:()=>import('@/views/task/add.vue')
+        redirect:"/taskboard"
+    },
+    {
+        path: "/taskboard",
+        title: '任务看板',
+        component: () => import('@/views/homepage/index.vue')
+    },
+    {
+        path: "/task",
+        title: "任务",
+        children: [
+            {
+                path: "taskConfig",
+                title: "任务配置",
+                component: () => import('@/views/task/config.vue')
+            },
+            {
+                path: "tackDetails",
+                title: "任务详情",
+                component: () => import('@/views/task/details.vue')
+            },
+            {
+                path:'settings',
+                title:"设置",
+                component:()=>import('@/views/task/settings.vue')
+
+            }
+
+        ]
     }
 ]
-const router=  createRouter({
-    history:createWebHashHistory(),
+const router = createRouter({
+    history: createWebHashHistory(),
     routes,
 })
 export default router

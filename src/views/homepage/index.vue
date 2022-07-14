@@ -1,6 +1,6 @@
 <template>
     <dv-full-screen-container>
-        <div class="task-board">
+        <div class="task-board" id="homepage">
             <div class="disk-board-title">
                 <dv-decoration-11 style="width:200px;height:60px;">任务看板</dv-decoration-11>
                 <div class="disk-board-fullscreen">

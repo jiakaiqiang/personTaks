@@ -1,5 +1,6 @@
 import {createStore} from 'vuex'
 import app from './modules/app'
+import user from './modules/user'
 //创建store 实例
 const store = createStore({
 //数据state
@@ -18,7 +19,8 @@ const store = createStore({
 
 //模块
 modules:{
-    app
+    app,
+    user
 }
 })
 export  default store

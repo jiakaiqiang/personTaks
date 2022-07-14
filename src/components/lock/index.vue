@@ -1,17 +1,20 @@
 <template>
     <div class="task-lock">
-        <div>已锁定</div>
-        <div>{{currentDate}}</div>
-        <div>
-            {{lockedTime}}
-        </div>
+       <div>
+           <div>已锁定</div>
+           <div>{{currentDate}}</div>
+           <div>
+               {{lockedTime}}
+           </div>
 
-        <el-button @click="unlock">解除锁定</el-button>
+           <el-button @click="unlock">解除锁定</el-button>
+       </div>
     </div>
 </template>
 
 <script>
     import {useStore} from 'vuex'
+    import {ref,onMounted ,onUnmount} from 'vue'
     import {format} from '@/common/js/until.js'
 
 
@@ -22,16 +25,21 @@
         },
         emits:['handlelock'],
         setup(props,content){
-            console.log(content,'we')
+
             const store =  useStore();
-            console.log(store.state.app.showModel)
+
 
             const unlock=()=>{
                 content.emit('handlelock',false)
                 store.commit('changeModelStatus',false)
             }
+            let currentDate=ref(format(new Date))
+            onMounted(()=>{
+                setInterval(()=>{
+                     currentDate.value=format(new Date)
+                },1000)
+            })
             //计算时间
-             let currentDate=ref(format(new Date))
             return{
                 unlock,
                 currentDate
@@ -48,8 +56,28 @@
         left:0;
         right:0;
         bottom:0;
-        background:white;
-        z-index:9999
+        background:black;
+        opacity: 0.9;
+        z-index:9999;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        &>div{
+            width:500px;
+            height:500px;
+            color:white;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &>div{
+                margin-bottom:16px;
+            }
+
+            &>div:nth-child(2){
+                font-size:20px;
+            }
+        }
     }
 
 </style>

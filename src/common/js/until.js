@@ -36,12 +36,7 @@ function format(time,type){
     }
 
 return formatTime
-
-    //定义时分
-
-
-
-
-
-
+}
+export {
+    format
 }
