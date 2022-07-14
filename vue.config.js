@@ -7,7 +7,6 @@ function resolve(dir) {
      */
     return path.join(__dirname, dir);
 }
-
 module.exports = defineConfig({
     transpileDependencies: true,
     lintOnSave: false,
@@ -31,7 +30,16 @@ module.exports = defineConfig({
     //配置服务器代理
     devServer: {
         port: 3000,
-        open: true,
+        proxy:{
+        ' /':{
+            target:'http://192.168.146.173:3001',
+            changeOrigin: true,
+            ws: true,
+            pathRewrite: {
+                '^api/': ''
+            }
+        }
+        }
 
 
     }

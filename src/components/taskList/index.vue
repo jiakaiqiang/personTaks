@@ -28,7 +28,7 @@
 
                     </div>
                     <div class="task-config-content-time">
-                        <div v-if="item.isfinished">
+                        <div v-if="item.isfinished===1">
                             <span><el-tag type="success">完成时间</el-tag>:<span>{{item.finishTime}}</span></span>
                         </div>
                         <div v-else>
