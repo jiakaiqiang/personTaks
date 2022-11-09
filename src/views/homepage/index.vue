@@ -36,9 +36,7 @@
                 height: "500px",
             });
             const store = useStore();
-            console.log(store,'wewe--')
-
-
+        
             let chartOptions = reactive({
                 option: {
                     color: ['#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#ea7ccc'],
@@ -140,15 +138,14 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        height: 120px;
+         height: 60px;
         align-items: center;
         font-size: 20px;
 
         .disk-board-fullscreen {
             position: absolute;
             right: 50px;
-            top: 50px;
-
+            top: 80px;
             i {
                 font-size: 30px
             }
@@ -158,7 +155,7 @@
     .task-board {
         margin: 8px;
         border: 1px solid #aaa;
-        height: calc(100vh - 120px);
+        // height: calc(100vh - 120px);
         color: white;
         border-radius: 10px;
         background-image: url('@/images/homepageBg.png');

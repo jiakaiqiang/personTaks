@@ -20,6 +20,11 @@ const routes = [
                 component: () => import('@/views/task/config.vue')
             },
             {
+                path: "taskAdd",
+                title: "新增任务",
+                component: () => import('@/views/task/add.vue')
+            },
+            {
                 path: "tackDetails",
                 title: "任务详情",
                 component: () => import('@/views/task/details.vue')

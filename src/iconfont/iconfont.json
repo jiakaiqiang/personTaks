@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "2674483",
+      "name": "暂停",
+      "font_class": "zanting",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "4933369",
+      "name": "启动",
+      "font_class": "qidong",
+      "unicode": "e746",
+      "unicode_decimal": 59206
+    },
+    {
+      "icon_id": "12770903",
+      "name": "消息通知",
+      "font_class": "xiaoxitongzhi",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "20316558",
+      "name": "中止",
+      "font_class": "lianxi2hebing-15",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
       "icon_id": "886676",
       "name": "结束",
       "font_class": "jieshu",

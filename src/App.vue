@@ -1,11 +1,11 @@
 <template>
     <navs class="task-nav" id="nav"></navs>
-    <el-button @click.prevent.stop="handleGuide()">新手引导</el-button>
+    <!-- <el-button @click.prevent.stop="handleGuide()">新手引导</el-button> -->
     <div class="task-container-view">
         <router-view></router-view>
     </div>
     <el-button :style="{left:x+'px',top:y+'px',display:display,position:'absolute','z-index':7777,transform: 'translate(-50%, -50%)'}"  @click="handlelock">
-     <el-icon><Setting /></el-icon>
+     <!-- <el-icon><Setting /></el-icon> -->
         锁定
     </el-button>
 

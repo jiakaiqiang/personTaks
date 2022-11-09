@@ -3,7 +3,7 @@
 
          <el-row v-for="(item,index) in taskList" :key="index">
 
-             <el-col :span="itemChildren.span" v-for="itemChildren in item.reportList">
+             <el-col :span="itemChildren.span" v-for="itemChildren in item.reportList"  :key='itemChildren.name'>
 
                  <el-card class="box-card">
                      <template #header>
