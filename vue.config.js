@@ -10,16 +10,15 @@ function resolve(dir) {
 module.exports = defineConfig({
     transpileDependencies: true,
     lintOnSave: false,
-  
     pluginOptions: {
         'style-resources-loader': {
             preProcessor: 'scss',
             patterns: []
         },
-        windicss: {
-            preflight: false,
-            // 具体配置请查看 https://github.com/windicss/vite-plugin-windicss/blob/main/packages/plugin-utils/src/options.ts
-          },
+        // windicss: {
+        //     preflight: false,
+        //     // 具体配置请查看 https://github.com/windicss/vite-plugin-windicss/blob/main/packages/plugin-utils/src/options.ts
+        //   },
     },
     configureWebpack: {
         // provide the app's title in webpack's name field, so that
@@ -34,7 +33,6 @@ module.exports = defineConfig({
     //配置服务器代理
     devServer: {
         port: 3000,
-        open:true,
         proxy:{
         ' /':{
             target:'http://192.168.146.173:3001',
@@ -45,7 +43,5 @@ module.exports = defineConfig({
             }
         }
         }
-
-
     }
 })

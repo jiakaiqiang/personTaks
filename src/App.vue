@@ -5,7 +5,7 @@
         <router-view></router-view>
     </div>
     <el-button :style="{left:x+'px',top:y+'px',display:display,position:'absolute','z-index':7777,transform: 'translate(-50%, -50%)'}"  @click="handlelock">
-     <!-- <el-icon><Setting /></el-icon> -->
+     <el-icon><Setting /></el-icon>
         锁定
     </el-button>
 

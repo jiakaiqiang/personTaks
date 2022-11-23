@@ -32,7 +32,7 @@ const routes = [
             {
                 path:'settings',
                 title:"设置",
-                component:()=>import('@/views/task/settings.vue')
+                component:() => import('@/views/task/settings.vue')
 
             }
 

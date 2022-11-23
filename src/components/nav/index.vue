@@ -16,58 +16,83 @@
     <el-menu-item index="0" class="flex-grow"> </el-menu-item>
     <el-menu-item index="" id="message" @click="handleShowMessage">
       <!-- 消息中心 -->
-      <el-popover placement="bottom" :width="400" trigger="click" popper-class='messageInfo-details'>
+      <el-popover
+        placement="bottom"
+        :width="300"
+        trigger="click"
+        popper-class="messageInfo-details"
+      >
         <template #reference>
-          <i class="iconfont icon-xiaoxitongzhi"></i>
+         <div class='messageInfo-number'>
+               <i class="iconfont icon-xiaoxitongzhi"></i>
+               <div>
+                 13
+               </div>
+         </div>
         </template>
         <div>
-          <el-tabs
-            v-model="activeName"
-            class="messageInfo-detalis-tab"
-        
-          >
+          <el-tabs v-model="activeName" class="messageInfo-detalis-tab">
             <el-tab-pane label="通知" name="notice">
               <template #label>
-                  <div class="messageInfo-detalis-label">
-                        <span>通知{{messageInfoDetali.notice}}</span>
-                  </div>
+                <div class="messageInfo-detalis-label">
+                  <span>通知({{ messageInfoDetali.notice }})</span>
+                </div>
               </template>
             </el-tab-pane>
             <el-tab-pane label="消息" name="message">
-                   <template #label>
-                  <div class="messageInfo-detalis-label">
-                        <span>消息{{messageInfoDetali.message}}</span>
-                  </div>
+              <template #label>
+                <div class="messageInfo-detalis-label">
+                  <span>消息({{ messageInfoDetali.message }})</span>
+                </div>
               </template>
             </el-tab-pane>
             <el-tab-pane label="待办" name="backlog">
-                   <template #label>
-                  <div class="messageInfo-detalis-label">
-                        <span>待办{{messageInfoDetali.backlog}}</span>
-                  </div>
+              <template #label>
+                <div class="messageInfo-detalis-label">
+                  <span>待办({{ messageInfoDetali.backlog }})</span>
+                </div>
               </template>
             </el-tab-pane>
           </el-tabs>
           <div>
-               <!-- 通知 -->
-               <div class='messageInfo-details-item' v-if="activeName=='notice'">
-                   <div>
-                       <span><i class='el-icon-'></i></span>
-                   </div>
-                   <div>
-                       <div> 你收到了12封邮件</div>
-                       <span>2020-12-12:12-12</span>
-                   </div>
-
-               </div>
-               <!-- 消息 -->
-                 <div class='messageInfo-details-item' v-if="activeName=='message'">
-
-               </div>
-               <!-- 待办 -->
-                 <div class='messageInfo-details-item' v-if="activeName=='backlog'">
-
-               </div>
+            <!-- 通知 -->
+            <div class="messageInfo-details-item" v-if="activeName == 'notice'">
+              <div>
+                <el-icon><ChatDotRound /></el-icon>
+              </div>
+              <div>
+                <div>你收到了12封邮件</div>
+                <div>2020-12-12:12-12</div>
+              </div>
+            </div>
+            <!-- 消息 -->
+            <div
+              class="messageInfo-details-item"
+              v-if="activeName == 'message'"
+            >
+             <div>
+                <el-icon><ChatDotRound /></el-icon>
+              </div>
+              <div>
+                <div>你收到了232封邮件</div>
+                <div>一周前</div>
+              </div>
+            </div>
+            <!-- 待办 -->
+            <div
+              class="messageInfo-details-item"
+              v-if="activeName == 'backlog'"
+            >
+             <div>
+                <el-icon><ChatDotRound /></el-icon>
+              </div>
+              <div>
+                <div>你收到了12封邮件</div>
+                <div>2020-12-12:12-12</div>
+              </div>
+            
+            
+            </div>
           </div>
         </div>
       </el-popover>
@@ -114,13 +139,13 @@ export default {
       console.log(messageInfo, "MESASGE");
     };
 
-///消息详情
-   const messageInfoDetali= reactive({
-       notice:12,
-       message:232,
-    backlog:2323
-   })
-   let activeName =  ref('notice')
+    ///消息详情
+    const messageInfoDetali = reactive({
+      notice: 12,
+      message: 232,
+      backlog: 2323,
+    });
+    let activeName = ref("notice");
 
     return {
       activeIndex,
@@ -131,21 +156,45 @@ export default {
       messageNumber,
       messageInfo,
       messageInfoDetali,
-      activeName
+      activeName,
     };
   },
 };
 </script>
 
-<style lang="scss">
-.messageInfo-details{
-    
-    .el-tabs{
-//         .el-tabs__nav-scroll{
-//   width: 260px;
-//         margin: 0 auto;
-//         }
-      
+<style lang="scss" scoped>
+.messageInfo-number{
+  position: relative;
+  >div:nth-of-type(1){
+       position: absolute;
+    top: 8px;
+    left: 8px;
+    background: red;
+    height: 20px;
+    border-radius: 12px;
+    line-height: 20px;
+    color: white;
+    width: 24px;
+    text-align: center;
+
+  }
+
+}
+.messageInfo-details-item {
+  display: flex;
+  > div:nth-of-type(1) {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    color: red;
+  }
+  > div:nth-of-type(2) {
+    > div:nth-of-type(1) {
+      margin-bottom: 10px;
     }
+    > div:nth-of-type(2) {
+      color: #d2c6c6;
+    }
+  }
 }
 </style>
