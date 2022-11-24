@@ -20,9 +20,9 @@ const routes = [
                 component: () => import('@/views/task/config.vue')
             },
             {
-                path: "taskAdd",
+                path: "taskManagement",
                 title: "新增任务",
-                component: () => import('@/views/task/add.vue')
+                component: () => import('@/views/task/management.vue')
             },
             {
                 path: "tackDetails",

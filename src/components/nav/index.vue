@@ -100,8 +100,8 @@
     <el-menu-item index="/taskboard" id="taskboard">任务看板</el-menu-item>
     <el-sub-menu index="/task">
       <template #title>任务</template>
-      <el-menu-item index="/task/taskConfig">任务管理</el-menu-item>
-      <el-menu-item index="/task/taskAdd">任务新增</el-menu-item>
+      <el-menu-item index="/task/taskConfig">任务展示</el-menu-item>
+      <el-menu-item index="/task/taskManagement">任务管理</el-menu-item>
       <el-menu-item index="/task/settting">系统配置</el-menu-item>
     </el-sub-menu>
     <el-menu-item index="0" id="userInfo">
