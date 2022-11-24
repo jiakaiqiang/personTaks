@@ -10,6 +10,8 @@ import 'element-plus/dist/index.css'
 import './iconfont/iconfont.css'
 import 'normalize.css/normalize.css'
 import {get} from '@/request/index'
+//加载全局的css
+import '@/style/index.scss'
 const app = createApp(App)
 //引入所有的图标
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
@@ -21,6 +23,5 @@ app.provide('$get',app.config.globalProperties.get)
 app.use(router)
     .use(echarts)
     .use(store)
-
     .use(ElementPlus)
     .mount('#app')

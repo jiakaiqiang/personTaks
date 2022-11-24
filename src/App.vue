@@ -45,6 +45,21 @@
 
 
             }, false)
+            //监听tab 切换事件
+               document.addEventListener('visibilitychange', (e) => {
+
+                    if(document.visibilityState==='hidden'){
+                        
+                    console.log('tab要切换了')
+            
+                    }
+
+
+
+               })
+ 
+
+
 
             //监听鼠标邮件
             window.addEventListener('click', (e) => {

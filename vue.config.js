@@ -35,7 +35,7 @@ module.exports = defineConfig({
         port: 3000,
         proxy:{
         ' /':{
-            target:'http://192.168.146.173:3001',
+            target:'http://192.168.146.173:3009',
             changeOrigin: true,
             ws: true,
             pathRewrite: {

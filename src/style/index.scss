@@ -3,3 +3,11 @@ body,html{
   margin:0;
   font-size:18px
 }
+//滚动条的布局
+.el-scrollbar__view{
+   height:calc(100vh - 120px);
+
+}
+.el-input,.el-textarea__inner {
+ // width: 320px;
+}
