@@ -1,5 +1,6 @@
 const {defineConfig} = require('@vue/cli-service')
-const path = require('path')
+const path = require('path');
+const { FALSE } = require('sass');
 
 function resolve(dir) {
     /**
@@ -32,14 +33,15 @@ module.exports = defineConfig({
     },
     //配置服务器代理
     devServer: {
-        port: 3000,
+        port: 3434,
+        open:true,
         proxy:{
-        ' /':{
+        '/api':{
             target:'http://192.168.146.173:3009',
             changeOrigin: true,
-            ws: true,
+            ws: false,
             pathRewrite: {
-                '^api/': ''
+                '^/api': ''
             }
         }
         }

@@ -1,7 +1,7 @@
 <template>
     <div class="task-list-config">
-        <template v-for="(item,index) in taskList ">
-            <el-card class="task-config-item" @click="handleClick('taskDetails',item)">
+        <template v-for="(item,index) in taskList" :key="index">
+            <el-card class="task-config-item" @click="handleClick('taskDetails',item)" >
                 <template #header>
                     <div class="task-config-header">
                         <div>
@@ -107,6 +107,9 @@
                            console.log(data,'wewe')
                         break;
                         case 'endtask':
+                           
+
+
                             break;
 
                 }

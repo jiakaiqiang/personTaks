@@ -9,7 +9,8 @@ import 'echarts-liquidfill'
 import 'element-plus/dist/index.css'
 import './iconfont/iconfont.css'
 import 'normalize.css/normalize.css'
-import {get} from '@/request/index'
+import { handlePrototype } from './util/prototype'
+
 //加载全局的css
 import '@/style/index.scss'
 const app = createApp(App)
@@ -17,8 +18,7 @@ const app = createApp(App)
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     app.component(key, component)
   }
-app.config.globalProperties.get=get
-app.provide('$get',app.config.globalProperties.get)
+  handlePrototype(app)
 
 app.use(router)
     .use(echarts)

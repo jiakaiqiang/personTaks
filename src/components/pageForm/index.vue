@@ -94,9 +94,9 @@ const props = defineProps({
     },
   },
   listTypeInfo: {
-    type: Array,
+    type: Object,
     defalut: () => {
-      return [];
+      return {};
     },
   },
   size: {
@@ -131,6 +131,10 @@ let getPlaceholder = (row) => {
 const {data,refObj,fieldList,listTypeInfo,size,labelWidth} = toRefs(props)
 console.log(data,'datas')
 const emit = defineEmits(["handleClick", "handleEvent"]);
+let   handleEvent=(event,data)=>{
+   emit('handleEvent',event,data)
+
+}
 </script>
 <style scoped lang='scss'>
 </style>
