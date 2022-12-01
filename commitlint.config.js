@@ -1,25 +1,31 @@
 module.exports = {
-    // 继承的规则
-    extends: ['@commitlint/config-conventional'],
-    // 定义规则类型
-    rules: {
-        // type 类型定义，表示 git 提交的 type 必须在以下类型范围内
-        'type-enum': [
-            2,
-            'always', [
-                'feat', // 新功能 feature
-                'fix', // 修复 bug
-                'docs', // 项目文档或注释变更
-                'style', // 仅仅修改了空格、格式缩进、逗号等等，不改变代码逻辑
-                'refactor', // 代码重构，没有加新功能或者修复bug
-                'perf', // 优化相关，比如提升性能、体验
-                'test', // 增加测试
-                'chore', // 改变构建流程、或者增加依赖库、工具等
-                'revert', // 回滚到上一个版本
-                'build', // 部署版本
-            ],
-        ],
-        // subject 大小写不做校验
-        'subject-case': [0],
+    // 可选类型
+    types:[
+      { value: 'feat',     name: 'feat:      新功能'},
+      { value: 'fix',      name: 'fix:       修复'},
+      { value: 'docs',     name: 'docs:      文档变更'},
+      { value: 'style',    name: 'style:     代码格式（不影响代码运行的变动）'},
+      { value: 'refactor', name: 'refactor:  重构（既不是增加feature）,也不是修复bug'},
+      { value: 'pref',     name: 'pref:      性能优化'},
+      { value: 'test',     name: 'test:      增加测试'},
+      { value: 'chore',    name: 'chore:     构建过程或辅助工具的变动'},
+      { value: 'revert',   name: 'revert:    回退'},
+      { value: 'build',    name: 'build:     打包'}
+    ],
+  
+    // 步骤
+    messages: {
+      type: '请选择提交的类型；',
+      customScope: '请输入修改的范围（可选）',
+      subject: '请简要描述提交（必填）',
+      body: '请输入详细描述（可选）',
+      footer: '请选择要关闭的issue（可选）',
+      confirmCommit: '确认要使用以上信息提交？（y/n）'
     },
-}
+  
+    // 跳过步骤
+    skip: ['body', 'footer'],
+  
+    // 默认长度
+    subjectLimit: 72
+  }
