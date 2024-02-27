@@ -4,6 +4,7 @@ import router from './router/index.js'
 import store from './store/index'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import ElementPlus from 'element-plus'
+import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 import * as echarts from 'echarts'  //引入echarts
 import 'echarts-liquidfill'
 import 'element-plus/dist/index.css'
@@ -23,5 +24,9 @@ app.provide('$get',app.config.globalProperties.get)
 app.use(router)
     .use(echarts)
     .use(store)
-    .use(ElementPlus)
+    .use(ElementPlus, {
+      locale: zhCn,
+    })
+
+   
     .mount('#app')

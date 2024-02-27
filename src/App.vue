@@ -1,5 +1,5 @@
 <template>
-    <navs class="task-nav" id="nav"></navs>
+    <!-- <navs class="task-nav" id="nav"></navs> -->
     <!-- <el-button @click.prevent.stop="handleGuide()">新手引导</el-button> -->
     <div class="task-container-view">
         <router-view></router-view>
